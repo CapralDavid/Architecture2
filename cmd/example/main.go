@@ -6,10 +6,7 @@ import (
 	"strings"
 	lab2 "github.com/CapralDavid/Architecture2"
 )
-var (
-	inputExpression = flag.String("e", "", "Expression to compute")
-	// TODO: Add other flags support for input and output configuration.
-)
+
 
 func isOperand(x string) (bool){
 	switch x{
@@ -75,11 +72,11 @@ func main(){
 		fmt.Println("____THIS IS STACK NOW_____end_____")
 
 	}
-	func main() {
-		flag.Parse()
+	flag.Parse()
 	fmt.Println(len(symbols))
 	fmt.Println(stack)
 	flag.Parse()
 	res, _ := lab2.PrefixToPostfix("+ 2 2")
 	fmt.Println(res)
 }
+
