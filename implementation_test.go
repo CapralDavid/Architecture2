@@ -8,14 +8,14 @@ import (
 )
 
 func TestPrefixToPostfix(t *testing.T) {
-	res, err := PrefixToPostfix("+ 5 * - 4 2 3")
+	res, err := TurnPrefixIntoInfix("* + 5 3 - 81 15")
 	if assert.Nil(t, err) {
-		assert.Equal(t, "4 2 - 3 * 5 +", res)
+		assert.Equal(t, "((5+3)*(81-15))", res)
 	}
 }
 
 func ExamplePrefixToPostfix() {
-	res, _ := PrefixToPostfix("+ 2 2")
+	res, _ := TurnPrefixIntoInfix("* + 5 3 - 81 15")
 	fmt.Println(res)
 
 	// Output:
