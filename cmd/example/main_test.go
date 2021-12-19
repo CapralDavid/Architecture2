@@ -12,7 +12,7 @@ var (
 	// TODO: Add other flags support for input and output configuration.
 )
 
-func TestMain() {
+func  TestMain(m *testing.M) {
 	flag.Parse()
 
 	// TODO: Change this to accept input from the command line arguments as described in the task and
