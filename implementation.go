@@ -50,19 +50,19 @@ func TurnPrefixIntoInfix(s string) (string, error){
 
 //!!!!!!!!!!!!!!!!
 	for i:=len(symbols)-1; i>=0; i--{
-		fmt.Println(symbols[i])
+		//fmt.Println(symbols[i])
 
 
 		if isOperand(symbols[i]){
 			var one, two string
-			fmt.Println("OPERAND")
+			//fmt.Println("OPERAND")
 			//проверяем на ошибку
 			if len(stack)< 2{
 				return "0", fmt.Errorf("ОШИБОЧКА")
 			}
 
 			stack, two, one = popTwoFromArray(stack)
-			fmt.Println("(" + one + symbols[i] + two + ")")
+			//fmt.Println("(" + one + symbols[i] + two + ")")
 			otvet:="(" + one + symbols[i] + two + ")"
 			stack = append(stack, otvet)
 		
@@ -72,8 +72,8 @@ func TurnPrefixIntoInfix(s string) (string, error){
 
 	}
 
-	fmt.Println("_______FINAL STACK")
-	fmt.Println(stack[0])
+	//fmt.Println("_______FINAL STACK")
+	//fmt.Println(stack[0])
 
 	return stack[0], nil
 
