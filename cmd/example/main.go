@@ -15,6 +15,8 @@ var (
 	// TODO: Add other flags support for input and output configuration.
 )
 
+//КОНСОЛЬ.если не хватает прообела между символами,то работает не до конца
+
 func  main() {
 	flag.Parse()
 
