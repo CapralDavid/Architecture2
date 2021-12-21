@@ -12,6 +12,7 @@ import (
 
 var (
 	inputExpression = flag.String("e", "", "Expression to evaluate")
+	inputFile       = flag.String("f", "", "add input file")
 	// TODO: Add other flags support for input and output configuration.
 )
 
@@ -23,8 +24,22 @@ func  main() {
 	var input io.Reader = nil
 	var output = os.Stdout
 
+	//консоль
+	//если inputExpression не равен "" то ...
+
 	if *inputExpression !="" {
 		input= strings.NewReader(*inputExpression)
+	}
+
+	//отдельный файл откуда еберм инфу
+	//если inputFile не равен "" то ...
+
+	if *inputFile != "" {
+		f, err := os.Open(*inputFile)
+		if err != nil {
+			fmt.Println("Error")
+		}
+		input = f
 	}
 
 	handler := &lab2.ComputeHandler{
