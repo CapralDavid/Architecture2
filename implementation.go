@@ -58,7 +58,7 @@ func TurnPrefixIntoInfix(s string) (string, error){
 			//fmt.Println("OPERAND")
 			//проверяем на ошибку
 			if len(stack)< 2{
-				return "0", fmt.Errorf("ОШИБОЧКА")
+				return "", fmt.Errorf("ОШИБОЧКА, неверное выражение.Короткое")
 			}
 
 			stack, two, one = popTwoFromArray(stack)
