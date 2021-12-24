@@ -7,6 +7,9 @@ import (
 
 // ComputeHandler should be constructed with input io.Reader and output io.Writer.
 // Its Compute() method should read the expression from input and write the computed result to the output.
+
+//описываем computeHandler
+//в main.go нет упоминания TurnPrefixIntoInfix,как и указано в задании
 type ComputeHandler struct {
 	// TODO: Add necessary fields.
 	Input  io.Reader
