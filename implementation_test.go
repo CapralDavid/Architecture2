@@ -31,3 +31,43 @@ func ExamplePrefixToPostfix() {
 	// Output:
 	// ((5+3)*(81-15))
 }
+
+//идея 
+// 1.простое выражение
+// 2.цикл который после каждого теста добавляет к концу переменной что тестируем еще одно простое выражение
+//  у тебя есть хороший туториал на англ Beautifully Simple Benchmarking with Go
+
+// t = 1+1
+// t1 = 1+1
+// t2 = 1+1+1+1
+// t1000 = ...
+
+func BenchmarkTurnPrefixIntoInfix(b *testing.B) {
+	var inpStr = " * + 5 3 - 81 15 "
+	//var inpStrConc = " * + 5 3 - 81 15 "
+
+	for i := 0; i < 20; i++ {
+		inpStr += inpStr
+		//fmt.Println(inpStr, i)
+
+		b.Run(fmt.Sprintf("len=%d", 7+i*7), func(b *testing.B) {
+			for i := 0; i < b.N; i++ {
+				TurnPrefixIntoInfix(inpStr)
+			}
+		})
+
+	}
+
+
+
+}
+
+// for i := 0; i < b.N; i++ {
+// 	TurnPrefixIntoInfix(inpStr)
+// }
+
+
+// for i := 0; i < 20; i++ {
+
+// }
+
